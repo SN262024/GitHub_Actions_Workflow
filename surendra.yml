@@ -1,0 +1,15 @@
+name: "Mera pehla pipeline"
+on:
+  push:
+    # workflow_dispatch
+    branches:
+    - main- feature/**
+    
+    jobs:
+      job: my first job
+       runs-on: Ayansh-runner
+        name: my fist job
+
+      job: my second job
+      runs-on: Ayansh-runner
+        name: My second job
