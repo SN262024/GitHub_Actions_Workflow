@@ -1,10 +1,22 @@
 name: "Mera pehla pipeline"
+
 on:
   push:
-    workflow_dispatch
-    jobs:
-      job: my first job
-        name: my fist job
+  workflow_dispatch:
 
-      job: my second job
-        name: My second job
+jobs:
+  first_job:
+    name: My first job
+    runs-on: Ayansh-runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Print message
+        run: echo "Hello, yeh mera pehla job hai!"
+
+  second_job:
+    name: My second job
+    runs-on: Ayansh-runner
+    steps:
+      - name: Print message
+        run: echo "Hello, yeh mera dusra job hai!"
