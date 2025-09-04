@@ -1,0 +1,10 @@
+name: "Mera pehla pipeline"
+on:
+  push:
+    workflow_dispatch
+    jobs:
+      job: my first job
+        name: my fist job
+
+      job: my second job
+        name: My second job
