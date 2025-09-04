@@ -1,10 +1,25 @@
 name: "Mera pehla pipeline"
+
 on:
   push:
-    workflow_dispatch
-    jobs:
-      job: my first job
-        name: my fist job
+    branches:
+      - main
+      - feature/**   # multiple branches allowed
+  # workflow_dispatch:  # agar manually run karna ho
 
-      job: my second job
-        name: My second job
+jobs:
+  first_job:           # job-id (spaces allowed nahi)
+    name: My first job
+    runs-on: Ayansh-runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Print message
+        run: echo "Hello, yeh mera pehla job hai!"
+
+  second_job:          # job-id (unique hona chahiye)
+    name: My second job
+    runs-on: Ayansh-runner
+    steps:
+      - name: Print message
+        run: echo "Hello, yeh mera dusra job hai!"
