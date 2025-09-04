@@ -2,7 +2,10 @@ name: "Mera pehla pipeline"
 
 on:
   push:
-  workflow_dispatch:
+  #workflow_dispatch:
+    branches:
+     - main
+     - features/**
 
 jobs:
   first_job:
